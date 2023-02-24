@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+Actualizacion de menu
+
+{% endblock %}
+
+{% block content %}
+<h1 style="color: crimson;">Actualizacion de Menus</h1>
+
+{% if form %}
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        <table> 
+            {{form.as_table}}
+        </table>
+       
+        <input type="submit" value="Actualizar menu">
+    </form>
+
+{% endif %}
+
+
+{% if form_errors %}
+    <h3 style="color: red;"> Error al cargar los datos: </h3>
+        {{form_errors}}
+    
+{% endif %}
+
+{% if message %}
+    <h3 style="color: blue;"> {{message}} </h3>
+
+{% endif %} 
+{% endblock %}
+

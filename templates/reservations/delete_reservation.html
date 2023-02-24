@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+Borrado de Reserva
+
+{% endblock %}
+
+{% block content %} 
+
+<h1 style="color: crimson;">Reserva a borrar {{object.name}}</h1>
+<p> Esta seguro que desea borrar la reserva?</p>
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+       
+        <input style="background-color:red; color: white;" type ="submit" value="Si, borrar">
+    </form>
+
+ 
+{% endblock %}
